@@ -1,4 +1,4 @@
-# Terraform Google Provider Schema Repository
+# Terraform Modtm Provider Schema Repository
 
 This repository contains the generated Go files for the ModTm provider schemas, which are based on the Terraform ModTm Provider. These schema files can be used as a reference when writing tools, such as TFLint plugins, that interact with the ModTm provider.
 
@@ -16,15 +16,14 @@ Then you can read schemas like this:
 
 ```go
 import (
-"testing"
+    "testing"
 
-"github.com/lonegunmanb/terraform-modtm-schema/generated"
-"github.com/stretchr/testify/assert"
+    "github.com/lonegunmanb/terraform-modtm-schema/generated"
+    "github.com/stretchr/testify/assert"
 )
 
 func TestResourceSchema(t *testing.T) {
-assert.NotEmpty(t, generated.Resources)
-assert.NotEmpty(t, generated.DataSources)
+    assert.NotEmpty(t, generated.Resources)
 }
 ```
 

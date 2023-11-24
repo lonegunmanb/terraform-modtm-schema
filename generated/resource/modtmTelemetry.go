@@ -9,6 +9,19 @@ import (
 const modtmTelemetry = `{
   "block": {
     "attributes": {
+      "endpoint": {
+        "description": "Telemetry endpoint to send data to, will override provider's default ` + "`" + `endpoint` + "`" + ` setting.\nYou can set ` + "`" + `endpoint` + "`" + ` in this resource, when there's no explicit ` + "`" + `setting` + "`" + ` in the provider block, it will override provider's default ` + "`" + `endpoint` + "`" + `.\n\n|Explicit ` + "`" + `endpoint` + "`" + ` in ` + "`" + `provider` + "`" + ` block | ` + "`" + `MODTM_ENDPOINT` + "`" + ` environment variable set | Explicit ` + "`" + `endpoint` + "`" + ` in resource block | Telemetry endpoint |\n|--|--|--|--|\n| ✓ | ✓ | ✓ | Explicit ` + "`" + `endpoint` + "`" + ` in ` + "`" + `provider` + "`" + ` block | \n| ✓ | ✓ | × | Explicit ` + "`" + `endpoint` + "`" + ` in ` + "`" + `provider` + "`" + ` block | \n| ✓ | × | ✓ | Explicit ` + "`" + `endpoint` + "`" + ` in ` + "`" + `provider` + "`" + ` block | \n| ✓ | × | × | Explicit ` + "`" + `endpoint` + "`" + ` in ` + "`" + `provider` + "`" + ` block | \n| × | ✓ | ✓ | ` + "`" + `MODTM_ENDPOINT` + "`" + ` environment variable | \n| × | ✓ | × | ` + "`" + `MODTM_ENDPOINT` + "`" + ` environment variable | \n| × | × | ✓ | Explicit ` + "`" + `endpoint` + "`" + ` in resource block | \n| × | × | × | Default Microsoft telemetry service endpoint | \n",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "ephemeral_number": {
+        "computed": true,
+        "description": "An ephemeral number that works with tags-generation tools like [BridgeCrew Yor](https://yor.io/)",
+        "description_kind": "markdown",
+        "optional": true,
+        "type": "number"
+      },
       "id": {
         "computed": true,
         "description": "Resource identifier",
@@ -17,7 +30,8 @@ const modtmTelemetry = `{
       },
       "nonce": {
         "computed": true,
-        "description": "A nonce that work with tags-generation tools like [BridgeCrew Yor](https://yor.io/)",
+        "deprecated": true,
+        "description": "A nonce that works with tags-generation tools like [BridgeCrew Yor](https://yor.io/)",
         "description_kind": "markdown",
         "optional": true,
         "type": "number"

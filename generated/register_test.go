@@ -9,5 +9,5 @@ import (
 
 func TestResourceSchema(t *testing.T) {
 	assert.NotEmpty(t, generated.Resources)
-	
+	assert.NotEmpty(t, generated.DataSources)
 }

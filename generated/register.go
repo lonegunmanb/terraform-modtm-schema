@@ -15,6 +15,7 @@ func init() {
 	resources := make(map[string]*tfjson.Schema, 0)
 	dataSources := make(map[string]*tfjson.Schema, 0)  
 	resources["modtm_telemetry"] = resource.ModtmTelemetrySchema()  
+	dataSources["modtm_module_source"] = data.ModtmModuleSourceSchema()  
 	Resources = resources
 	DataSources = dataSources
 }
